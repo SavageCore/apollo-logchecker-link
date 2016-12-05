@@ -1,6 +1,6 @@
 // ==UserScript==
 
-// @name           PTH Logchecker Link
+// @name           Apollo Logchecker Link
 // @author         SavageCore
 // @namespace      https://savagecore.eu
 // @description    Inserts a logchecker.php link in main menu.
