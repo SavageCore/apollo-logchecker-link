@@ -6,7 +6,6 @@
 // @description    Inserts a logchecker.php link in main menu.
 // @include        http*://*apollo.rip/*
 // @version        0.1.0
-// @date           2016-11-29
 // @grant          GM_getValue
 // @grant          GM_setValue
 // @downloadURL    https://github.com/SavageCore/apollo-logchecker-link/raw/master/src/apollo-logchecker-link.user.js
