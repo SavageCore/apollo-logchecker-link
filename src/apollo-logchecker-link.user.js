@@ -19,8 +19,33 @@
 var position = GM_getValue('position', 'userinfo');
 if (window.location.href.match('user.php\\?action=edit&userid=')) {
 	var lastRow = document.getElementById('site_tooltips_tr');
-	var selectHTML = '<tr id="pth_logchecker_tr">\n\t<td class="label tooltip"><strong>Logchecker link location</strong></td>\n<td>\n\t<select name="pth_logchecker" id="pth_logchecker">\n\t<option value="mainMenu">Main Menu</option>\n<option value="userinfo">User Info</option>\n</select>\n</td>\n</tr>';
-	lastRow.insertAdjacentHTML('afterend', selectHTML);
+
+	var tr = document.createElement('tr');
+	tr.id = 'pth_logchecker_tr';
+	var td = document.createElement('td');
+	td.className = 'label tooltip';
+	td.innerHTML = '<strong>Logchecker link location</strong>';
+	tr.appendChild(td);
+	var td2 = document.createElement('td');
+	tr.appendChild(td2);
+	var select = document.createElement('select');
+	select.name = 'pth_logchecker';
+	select.id = 'pth_logchecker';
+	td2.appendChild(select);
+	var menuOptions = {
+		0: {value: 'mainMenu', innerText: 'Main Menu'},
+		1: {value: 'userinfo', innerText: 'User Info'}
+	};
+	for (var key in menuOptions) {
+		if ({}.hasOwnProperty.call(menuOptions, key)) {
+			var optionElement = document.createElement('option');
+			optionElement.value = menuOptions[key].value;
+			optionElement.innerText = menuOptions[key].innerText;
+			select.appendChild(optionElement);
+		}
+	}
+
+	lastRow.insertAdjacentElement('afterend', tr);
 
 	var select = document.getElementById('pth_logchecker');
 	for (var i = 0; i < select.options.length; i++) {
