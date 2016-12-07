@@ -21,7 +21,7 @@ if (window.location.href.match('user.php\\?action=edit&userid=')) {
 	var lastRow = document.getElementById('site_tooltips_tr');
 
 	var tr = document.createElement('tr');
-	tr.id = 'pth_logchecker_tr';
+	tr.id = 'apollo_logchecker_tr';
 	var td = document.createElement('td');
 	td.className = 'label tooltip';
 	td.innerHTML = '<strong>Logchecker link location</strong>';
@@ -29,8 +29,8 @@ if (window.location.href.match('user.php\\?action=edit&userid=')) {
 	var td2 = document.createElement('td');
 	tr.appendChild(td2);
 	var select = document.createElement('select');
-	select.name = 'pth_logchecker';
-	select.id = 'pth_logchecker';
+	select.name = 'apollo_logchecker';
+	select.id = 'apollo_logchecker';
 	td2.appendChild(select);
 	var menuOptions = {
 		0: {value: 'mainMenu', innerText: 'Main Menu'},
@@ -47,7 +47,7 @@ if (window.location.href.match('user.php\\?action=edit&userid=')) {
 
 	lastRow.insertAdjacentElement('afterend', tr);
 
-	var select = document.getElementById('pth_logchecker');
+	var select = document.getElementById('apollo_logchecker');
 	for (var i = 0; i < select.options.length; i++) {
 		if (select.options[i].value === position) {
 			select.options[i].selected = 'selected';
