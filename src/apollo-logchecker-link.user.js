@@ -5,7 +5,7 @@
 // @namespace      https://savagecore.eu
 // @description    Inserts a logchecker.php link in main menu.
 // @include        http*://*apollo.rip/*
-// @version        0.1.0
+// @version        0.1.1
 // @grant          GM_getValue
 // @grant          GM_setValue
 // @downloadURL    https://github.com/SavageCore/apollo-logchecker-link/raw/master/src/apollo-logchecker-link.user.js
