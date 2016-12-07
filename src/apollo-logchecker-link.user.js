@@ -34,7 +34,8 @@ if (window.location.href.match('user.php\\?action=edit&userid=')) {
 	td2.appendChild(select);
 	var menuOptions = {
 		0: {value: 'mainMenu', innerText: 'Main Menu'},
-		1: {value: 'userinfo', innerText: 'User Info'}
+		1: {value: 'userinfo', innerText: 'User Info'},
+		2: {value: 'userinfo_major', innerText: 'User Info Major'}
 	};
 	for (var key in menuOptions) {
 		if ({}.hasOwnProperty.call(menuOptions, key)) {
@@ -65,6 +66,11 @@ if (window.location.href.match('user.php\\?action=edit&userid=')) {
 				var element = document.getElementById('userinfo_minor');
 				updateLink(element);
 				break;
+			case 'userinfo_major':
+				GM_setValue('position', 'userinfo_major');
+				var element = document.getElementById('userinfo_major');
+				updateLink(element);
+				break;
 			default:
 				GM_setValue('position', 'mainMenu');
 				var element = document.getElementById('menu').children[1];
@@ -80,6 +86,10 @@ switch (position) {
 		break;
 	case 'userinfo':
 		var menu = document.getElementById('userinfo_minor');
+		appendLink(menu);
+		break;
+	case 'userinfo_major':
+		var menu = document.getElementById('userinfo_major');
 		appendLink(menu);
 		break;
 	default:
